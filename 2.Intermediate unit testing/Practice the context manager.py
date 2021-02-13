@@ -20,3 +20,11 @@ import pytest
 # Store the raised ValueError in the variable exc_info
 with pytest.raises(ValueError) as exc_info:
     raise ValueError("Silence me!")
+
+    
+import pytest
+
+with pytest.raises(ValueError) as exc_info:
+    raise ValueError("Silence me!")
+# Check if the raised ValueError contains the correct message
+assert exc_info.match("Silence me!")
